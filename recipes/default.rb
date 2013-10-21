@@ -20,8 +20,13 @@
 # limitations under the License.
 #
 
-include_recipe 'java::default'
-include_recipe 'ark::default'
+if node['maven']['skip_java'] == false do
+	include_recipe 'java::default'
+end
+
+if node['maven']['skip_ark'] == false do
+	include_recipe 'ark::default'
+end
 
 mvn_version = node['maven']['version'].to_s
 
