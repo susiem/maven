@@ -20,11 +20,11 @@
 # limitations under the License.
 #
 
-if node['maven']['skip_java'] == false do
+if node['maven']['skip_java'] == false
 	include_recipe 'java::default'
 end
 
-if node['maven']['skip_ark'] == false do
+if node['maven']['skip_ark'] == false
 	include_recipe 'ark::default'
 end
 
